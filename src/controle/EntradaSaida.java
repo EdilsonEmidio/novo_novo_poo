@@ -1,6 +1,5 @@
 package controle;
 import java.util.List;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public abstract class EntradaSaida<T> {
@@ -15,13 +14,16 @@ public abstract class EntradaSaida<T> {
 		EntradaSaida.entradaUsuario = entradaUsuario;
 	}
 	
-	public static String pegar() {
+	public static void pegar() {
+		setEntradaUsuario(pegador.next());
+	}
+	
+	public static void pegarTestar() {
 		do {
 			setEntradaUsuario(pegador.next());
 		}while(!Ajudantes.validarEntrada(entradaUsuario));
-		
-		return getEntradaUsuario();
 	}
+	
 	public static <T> void mostrar(List<T> lista) {
 		for(T e : lista) {
 			System.out.println(e);

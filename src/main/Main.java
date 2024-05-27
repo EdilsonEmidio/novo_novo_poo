@@ -1,12 +1,13 @@
 package main;
+import java.io.IOException;
+
 import campos.TodosCampos;
-import controle.Ajudantes;
 import controle.EntradaSaida;
 import fluxos.Escolher;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException, ClassNotFoundException {
 		try {
 			boolean manter = true;
 			do {
@@ -18,19 +19,17 @@ public class Main {
 			
 		}catch(Exception e) {
 			System.out.println("Erro!");
-			System.out.println("Codigo de erro: " + e.getMessage());
+			System.out.println("Codigo de erro: " + e);
 		}finally {
 			System.out.println("Deseja tentar novamente?");
 			EntradaSaida.mostrarEnumerado(TodosCampos.campoFinally());
-			EntradaSaida.pegar();
+			EntradaSaida.pegarTestar();
 			
 			if(EntradaSaida.getEntradaUsuario().contentEquals("1")) {
 				Escolher.iniciar();
 			}
 			
-		}
-		
-
+		}	
 	}
 
 }

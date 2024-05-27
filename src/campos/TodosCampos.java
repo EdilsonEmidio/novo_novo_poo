@@ -2,8 +2,6 @@ package campos;
 import java.util.ArrayList;
 import java.util.List;
 
-import controle.Ajudantes;
-
 public abstract class TodosCampos{
 	
 	public static List<String> campoFinally(){
